@@ -32,9 +32,5 @@ async def handle_form(request: Request, url: str = Form(...)):
         raise HTTPException(status_code=500, detail="Internal Server Error")
 
 @app.get("/{short_code}")
-async def redirect_to_long_url(short_code: str):
-    if True:
-        return RedirectResponse(url=Form_[0])
-    else:
-        raise HTTPException(status_code=404, detail="URL not found")
-    
+async def redirect_to_long_url():
+    return RedirectResponse(url=Form_[-1])
