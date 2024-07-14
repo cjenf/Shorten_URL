@@ -25,7 +25,7 @@ async def handle_form(request: Request, url: str = Form(...)):
     try:
         Form_.append(url)
         short_code = generate_short_code(url)
-        short_url = "https://shorten-url-pyiu.vercel.app/" + short_code
+        short_url = "https://shorten-url-henna.vercel.app/" + short_code
         return templates.TemplateResponse("result.html", {'request': request, "name": short_url})
     except Exception as e:
         print(f"Error: {e}")
